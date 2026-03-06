@@ -1,0 +1,92 @@
+
+.login {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 100px;
+    justify-content: space-around;
+    transition: box-shadow 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+input {
+    padding: 10px;
+    border: 1px solid gray;
+    outline: none;
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 00px 0px;
+    flex-direction: column;
+    
+}
+.login:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        animation: slowly 1s;
+        transition: box-shadow 10s ease;
+}
+input:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    animation: inputs 10s;
+    border: 1px solid gray;
+    transition: box-shadow 0.1s ease;
+}
+select {
+    padding: 10px;
+}
+#Register {
+    padding: 10px;
+    border: 1px solid grey;
+    background-color: rgb(121, 172, 219);
+}
+#Register:hover {
+    animation: button 1s forwards;
+    cursor: pointer;
+}
+a {
+    align-self: flex-start;
+    font-size: 14px;
+}
+.photo {
+    background-image: url(../Photos/EverestMountain.png);
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    animation: mountainappear 1s;
+}
+.photo:hover {
+    transform: scale(101%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

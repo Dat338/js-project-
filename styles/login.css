@@ -1,0 +1,82 @@
+main {
+    width: 100%;
+    padding: 200px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 40px;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+input {
+    padding: 10px;
+    outline: none;
+}
+#login {
+    padding: 10px;
+    border: 1px solid grey;
+    background-color: rgb(121, 172, 219);
+    width: 100%;
+}
+#login:hover {
+    animation: button 1s forwards;
+    cursor: pointer;
+}
+.login:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        animation: slowly 1s;
+        transition: box-shadow 10s ease;
+}
+input:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    animation: inputs 10s;
+    border: 1px solid gray;
+    transition: box-shadow 0.1s ease;
+}
+a {
+    align-self: flex-start;
+    font-size: 14px;
+}
+.photo {
+    background-image: url(../Photos/EverestMountain.png);
+    width: 130px;
+    height: 130px;
+    background-position: center;
+    background-size: cover;
+    animation: mountainappearr 1s;
+}
+.photo:hover {
+    transform: scale(101%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes mountainappearr {
+    0% {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 200px;
+    }
+    100%{
+        width: 130px;
+        height: 130px;
+        margin-bottom: 0px;
+    }
+}
