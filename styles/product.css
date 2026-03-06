@@ -1,0 +1,28 @@
+.box {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 250px;
+    height: 400px;
+}
+.photo {
+    width: 100px;
+    height: 100px;
+}
+.mainpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.filterpage {
+    width: 90%;
+    height: 200px;
+    background-color: aqua;
+}
+.gone {
+    display: none;
+}
