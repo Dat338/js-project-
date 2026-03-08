@@ -1,7 +1,33 @@
 let email = document.querySelector("#email")
 let password = document.querySelector("#password")
 let button = document.querySelector("#login")
+let login = document.querySelector(".login")
+let main = document.querySelector(".text")
+let appearlogin = document.querySelector("#appearlogin")
+let forgot = document.querySelector("#forgotpas")
+let text = "Welcome To Everest"
+let letters = 0
 
+function appeartext () {
+    if (letters < text.length) {
+        let place = document.createElement("span")
+        place.classList.add("someone")
+        place.innerHTML = text[letters]
+
+        main.appendChild(place)
+
+        letters++
+
+        setTimeout(appeartext, 200)
+    }
+}
+
+appeartext()
+
+setTimeout(() => {
+  main.innerHTML = ""
+    appearlogin.classList.remove("hidden")
+}, 3900)
 
 
 button.addEventListener("click", () => {
@@ -20,7 +46,53 @@ fetch("https://api.everrest.educata.dev/auth/sign_in", {
 })
 .then(res => res.json())
 .then(data => {
-    localStorage.setItem("Token", data.access_token)
+    localStorage.setItem("accessToken", data.access_token)
+    window.location.href = "./html/products.html";
+    localStorage.setItem("user", JSON.stringify(login))
     console.log(data)
+    
+})
+})
+
+
+
+forgot.addEventListener ("click", () => {
+    let popup = document.createElement("div")
+    popup.classList.add("loginpopup")
+    main.appendChild(popup)
+    let close = document.createElement("div")
+    close.classList.add("close")
+    close.innerText = "X"
+    close.addEventListener("click", ()=> {
+        popup.remove()
+    })
+    popup.innerHTML = `
+        <h2 id="textofpopup">Please enter Email</h2>
+        <input type="email" id="Recoveryemail" required >
+        <Button class="bluebutton buttonwidth" id="recbutton">Sumbit</Button>`
+    popup.appendChild(close)
+
+    let Recoveryemail = document.querySelector("#Recoveryemail")
+    let recoverybutton = document.querySelector("#recbutton")
+    let textofpopup = document.querySelector("#textofpopup")
+    recoverybutton.addEventListener("click", ()=> {
+    fetch ("https://api.everrest.educata.dev/auth/recovery", {
+    method: "post",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({email : Recoveryemail.value})
+    })
+    .then (resp => resp.json())
+    .then (y => {
+        console.log(y)
+     if (y.status == 200) {
+        textofpopup.innerText = "recovery has been sent to email"
+     }
+     else {
+        textofpopup.innerText = "Please use correct email"
+     }
+    })
+    
 })
 })

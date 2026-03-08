@@ -5,22 +5,53 @@
     color: black;
     text-decoration: none;
 }
+.hidden {
+    display: none;
+}
+.bluebutton {
+    padding: 10px;
+    border: 1px solid grey;
+    background-color: rgb(121, 172, 219);
+    width: 100%;
+}
+.bluebutton:hover {
+    animation: button 1s forwards;
+    cursor: pointer;
+}
+
+/* #region header */
+
+.logo {
+    background-image: url(../Photos/logo-circle.png);
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+}
+.hleft{
+    display: flex;
+}
+.Everesth3 {
+    margin-top: 7px;
+    font-family: cursive;
+    margin-left: 5px;
+}
+.profile {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: aqua;
+}
+a {
+    display: flex; 
+}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+/* #endregion header */
 
 
 

@@ -1,15 +1,19 @@
 .box {
     border: 1px solid black;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     width: 250px;
     height: 400px;
+    padding: 10px;
+    font-family: cursive;
 }
 .photo {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 50%;
+    background-position: center;
+    background-size: cover;
+    background-color: aqua;
 }
 .mainpage {
     display: flex;
@@ -17,12 +21,32 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-}
-.filterpage {
-    width: 90%;
-    height: 200px;
-    background-color: aqua;
+    margin-top: 20px;
 }
 .gone {
     display: none;
+}
+.pages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#ViewMore {
+    margin-top: 30px;
+    width: 100px;
+}
+header {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+aside {
+    width: 700px;
+    border: 1px solid black;
+    height: 40vh;
+}
+main {
+    display: flex;
 }

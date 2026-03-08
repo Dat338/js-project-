@@ -9,6 +9,7 @@ let zipcode = document.querySelector("#zipcode")
 let avatar = document.querySelector("#avatar")
 let gender = document.querySelector("#gender")
 let address = document.querySelector("#address")
+let main = document.querySelector("#verify")
 
 Register.addEventListener("click", () => {
     let regform = {
@@ -34,8 +35,42 @@ Register.addEventListener("click", () => {
     })
     .then(Resp => Resp.json())
     .then(data => {
-        window.location.href = "../html/login.html"
+        verify()
+        console.log(data)
     })
     
 })
+function verify () {
+    fetch("https://api.everrest.educata.dev/auth/verify_email", {
+        method: "post",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({ email: email.value })
+    })
+    .then(rap => rap.json())
+    .then(x => {
+        verifypage(x)
+        console.log(x)
+    })
+}
+function verifypage (obj) {
+    let page = document.createElement("div")
+    page.classList.add("page")
+    main.appendChild(page)
+    if (obj.statusCode === 400) {
+    page.innerHTML = `<h2>${obj.error}</h2>`
+    page.style.border = "1px solid red"
+    setTimeout(() => {
+            page.classList.add("hidden")
+        }, 2000)
+    } 
+    else {
+    page.innerHTML = "<h2>Please verify your email</h2>"
+    page.style.border = "1px solid green"
+    setTimeout(() => {
+            window.location.href = "../index.html"
+        }, 15000)
+    }
 
+}
