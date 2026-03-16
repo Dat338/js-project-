@@ -35,15 +35,6 @@ input:hover {
 select {
     padding: 10px;
 }
-#Register {
-    padding: 10px;
-    border: 1px solid grey;
-    background-color: rgb(121, 172, 219);
-}
-#Register:hover {
-    animation: button 1s forwards;
-    cursor: pointer;
-}
 a {
     align-self: flex-start;
     font-size: 14px;

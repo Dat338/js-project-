@@ -4,15 +4,18 @@
     box-sizing: border-box;
     color: black;
     text-decoration: none;
+    font-family: cursive;
 }
 .hidden {
     display: none;
 }
 .bluebutton {
     padding: 10px;
-    border: 1px solid grey;
-    background-color: rgb(121, 172, 219);
+    border: none;
+    background-color: #2563eb;
     width: 100%;
+    color: white;
+    border-radius: 10px;
 }
 .bluebutton:hover {
     animation: button 1s forwards;
@@ -30,22 +33,74 @@
 }
 .hleft{
     display: flex;
+    padding: 10px;
 }
 .Everesth3 {
     margin-top: 7px;
     font-family: cursive;
     margin-left: 5px;
 }
-.profile {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    background-color: aqua;
-}
 a {
     display: flex; 
 }
-
+.profile {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile:hover {
+    cursor: pointer;
+}
+.icon {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.headerv2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    padding: 5px;
+}
+.listofprofile {
+    position: absolute;
+    display: none;
+    background-color: white;
+    border: 1px solid black;
+    top: 90px;
+    right: 0px;
+    padding: 10px;
+}
+.something {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100px;
+    animation: keydown 1s;
+}
 
 
 
@@ -100,10 +155,10 @@ a {
 }
 @keyframes button {
     0%{
-        background-color: rgb(121, 172, 219);
+        background-color: #2563eb;
     }
     100%{
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(18, 1, 78);
     }
 } 
 @keyframes mountainappear {
@@ -118,3 +173,8 @@ a {
         margin-bottom: 0px;
     }
 }
+@keyframes keydown {
+    0% {
+        top: 60px;
+    }
+}   
