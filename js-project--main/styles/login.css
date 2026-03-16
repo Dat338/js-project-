@@ -1,0 +1,123 @@
+main {
+    width: 100%;
+    padding: 200px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 40px 40px;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+input {
+    padding: 10px;
+    outline: none;
+}
+.login:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        animation: slowly 1s;
+        transition: box-shadow 10s ease;
+}
+input:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    animation: inputs 10s;
+    border: 1px solid gray;
+    transition: box-shadow 0.1s ease;
+}
+a {
+    font-size: 14px;
+    text-align: center;
+}
+.photo {
+    background-image: url(../Photos/EverestMountain.png);
+    width: 130px;
+    height: 130px;
+    background-position: center;
+    background-size: cover;
+    animation: mountainappearr 1s;
+}
+.photo:hover {
+    transform: scale(105%);
+}    
+.someone{
+    font-size: 32px;
+    font-family: cursive;
+    display: inline-block;
+    margin-top: 100px;
+}
+.logintext {
+    display: flex;
+}
+.register {
+    margin-top: 30px;
+    text-align: center;
+}
+.loginpopup {
+    padding: 100px 40px;
+    width: 300px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    gap: 30px;
+    align-items: space-around;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border: 1px solid gray;
+    animation: appearing 1s ;
+}
+.buttonwidth {
+    width: 100px;
+}
+#forgotpas {
+    cursor: pointer;
+}
+.close{
+position:absolute;
+top:10px;
+right:15px;
+cursor:pointer;
+font-size:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes mountainappearr {
+    0% {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 200px;
+    }
+    100%{
+        width: 130px;
+        height: 130px;
+        margin-bottom: 0px;
+    }
+}
+@keyframes appearing {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

@@ -1,0 +1,180 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: black;
+    text-decoration: none;
+    font-family: cursive;
+}
+.hidden {
+    display: none;
+}
+.bluebutton {
+    padding: 10px;
+    border: none;
+    background-color: #2563eb;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+}
+.bluebutton:hover {
+    animation: button 1s forwards;
+    cursor: pointer;
+}
+
+/* #region header */
+
+.logo {
+    background-image: url(../Photos/logo-circle.png);
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+}
+.hleft{
+    display: flex;
+    padding: 10px;
+}
+.Everesth3 {
+    margin-top: 7px;
+    font-family: cursive;
+    margin-left: 5px;
+}
+a {
+    display: flex; 
+}
+.profile {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile:hover {
+    cursor: pointer;
+}
+.icon {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.headerv2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    padding: 5px;
+}
+.listofprofile {
+    position: absolute;
+    display: none;
+    background-color: white;
+    border: 1px solid black;
+    top: 90px;
+    right: 0px;
+    padding: 10px;
+}
+.something {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100px;
+    animation: keydown 1s;
+}
+
+
+
+
+
+/* #endregion header */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes slowly {
+    0%{
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;  
+    }
+    50% {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 45px, rgba(0, 0, 0, 0.12) 0px -6px 16px, rgba(0, 0, 0, 0.12) 0px 2px 3px, rgba(0, 0, 0, 0.17) 0px 6px 7px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    100%{
+       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+}
+@keyframes inputs {
+    0%{
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 3px, rgba(0, 0, 0, 0.22) 0px 3px 3px;    
+    }
+    100%{
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+}
+@keyframes button {
+    0%{
+        background-color: #2563eb;
+    }
+    100%{
+        background-color: rgb(18, 1, 78);
+    }
+} 
+@keyframes mountainappear {
+    0% {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 200px;
+    }
+    100%{
+        width: 200px;
+        height: 200px;
+        margin-bottom: 0px;
+    }
+}
+@keyframes keydown {
+    0% {
+        top: 60px;
+    }
+}   
