@@ -46,12 +46,36 @@ fetch("https://api.everrest.educata.dev/auth/sign_in", {
 })
 .then(res => res.json())
 .then(data => {
-    localStorage.setItem("accessToken", data.access_token)
-    window.location.href = "./html/products.html";
-    localStorage.setItem("user", JSON.stringify(login))
-    console.log(data)
-    
+    console.log(data);
+    if (data.access_token) {
+        localStorage.setItem("accessToken", data.access_token);
+        localStorage.setItem("user", JSON.stringify(login));
+        Swal.fire({
+            title: "Welcome!",
+            text: "Login successful 🎉",
+            icon: "success",
+            timer: 1500,
+            showConfirmButton: false
+        });
+        setTimeout(() => {
+            window.location.href = "./html/products.html";
+        }, 1500);
+    } else {
+        Swal.fire({
+            title: "Login Failed",
+            text: "Wrong email or password",
+            icon: "error"
+        });
+    }
 })
+.catch(err => {
+    console.log(err);
+    Swal.fire({
+        title: "Error",
+        text: "Something went wrong",
+        icon: "error"
+    });
+});
 })
 
 

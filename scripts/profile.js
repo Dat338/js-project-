@@ -8,7 +8,6 @@ userinformation.classList.add("inform");
 infprofile.appendChild(userinformation);
 
 for (let key in inform) {
-
     if (obj.includes(key)) continue;
     let foreveryone = document.createElement("div");
     foreveryone.classList.add("foreveryone");
@@ -48,8 +47,13 @@ for (let key in inform) {
             value.innerText = input.value;
             input.classList.add("hidden");
             saveBtn.classList.add("hidden");
+            Swal.fire({
+            text: "Change succesful",
+            icon: "success",
+            timer: 1500,
+            showConfirmButton: false
         });
-
+        });
     });
     foreveryone.append(title,value,input,buttons);
     buttons.append(editBtn,saveBtn)
@@ -89,6 +93,12 @@ function passwordchange() {
         .then(res => res.json())
         .then(data => {
             console.log(data) 
+            Swal.fire({
+            text: "Change succesful",
+            icon: "success",
+            timer: 1500,
+            showConfirmButton: false
+        });
         })
     })
 

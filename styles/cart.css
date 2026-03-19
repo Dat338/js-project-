@@ -1,0 +1,225 @@
+/* CART CONTAINER */
+.cart{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+}
+
+/* PRODUCT CARD */
+.box{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:#f8f8f8;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    flex-wrap:wrap;
+}
+
+/* PRODUCT IMAGE */
+.photo{
+    width:120px;
+    height:120px;
+    background-size:cover;
+    background-position:center;
+    border-radius:8px;
+}
+
+/* INFO FLEX */
+.flex{
+    display:flex;
+    gap:15px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* PRICE */
+.flex h3{
+    color:#2e7d32;
+}
+
+/* RATING */
+.flex h4{
+    color:#ff9800;
+}
+
+/* BUTTONS GENERAL */
+.box button{
+    border:none;
+    padding:7px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+    transition:0.2s;
+}
+
+/* PLUS BUTTON */
+.box button:nth-of-type(1){
+    background:#4CAF50;
+    color:white;
+}
+
+.box button:nth-of-type(1):hover{
+    background:#43a047;
+}
+
+/* MINUS BUTTON */
+.box button:nth-of-type(2){
+    background:#f0ad4e;
+    color:white;
+}
+
+.box button:nth-of-type(2):hover{
+    background:#ec971f;
+}
+/* Total Price Styling */
+#total {
+  text-align: center;           /* Centered on page */
+  font-size: 18px;              /* Big and readable */
+  font-weight: bold;            /* Emphasis */
+  color: #17741c;               /* Blue color for visibility */
+  margin: 20px 0;               /* Space above and below */
+  padding: 10px 0;              /* Extra padding */
+  background-color: #f9f9f9;    /* Light background */
+  border-radius: 8px;           /* Rounded edges */
+}
+/* Optional: animation when total changes */
+#total.update {
+  animation: flashTotal 0.5s ease;
+}
+
+@keyframes flashTotal {
+  0%   { background-color: #f9f9f9; color: #1a73e8; }
+  50%  { background-color: #1a73e8; color: #fff; }
+  100% { background-color: #f9f9f9; color: #1a73e8; }
+}
+
+/* DELETE BUTTON (RED) */
+.delete{
+    background:#e53935;
+    color:white;
+    margin-left:auto;
+}
+
+.delete:hover{
+    background:#c62828;
+}
+
+/* CARD HOVER */
+.box:hover{
+    transform:scale(1.02);
+    transition:0.2s;
+}
+.delete {
+    display: block;
+    margin: 20px auto;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* Common styling for both buttons */
+button.delete,
+button.buy {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin: 10px 5px; /* spacing between buttons */
+}
+
+/* Delete all button style */
+button.delete {
+  background-color: #e53935; /* red */
+  color: #fff;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.delete:hover {
+  background-color: #b71c1c; /* darker red */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+button.delete:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Buy button style */
+button.buy {
+  background-color: #1a73e8; /* blue */
+  color: #fff;
+}
+
+button.buy:hover {
+  background-color: #155bb5; /* darker blue */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+button.buy:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Optional: full width versions */
+button.buy.full-width,
+button.delete.full-width {
+  width: 100%;
+  text-align: center;
+}
+
+.delete:hover {
+    background: darkred;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width:768px){
+
+.box{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.photo{
+    width:100%;
+    height:200px;
+}
+
+.delete{
+    margin-left:0;
+}
+
+}
+
+/* RESPONSIVE PHONE */
+@media (max-width:480px){
+
+.box{
+    padding:12px;
+}
+
+.flex{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+}
+
+.box button{
+    width:100%;
+}
+
+}

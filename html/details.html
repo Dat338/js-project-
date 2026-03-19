@@ -4,20 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
+    <header id="header">
+        <ul>
+            <li><a href="./products.html">
+        <div class="hleft">
+        <div class="logo"></div>
+        <h3 class="Everesth3">EverEest</h3>
+        </a></li>
+        
+        <div class="rame">
+        <li><a href="../html/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li id="profileinfo"></li>
+        </ul>
+        </div>
+        </div>
 
+        
+    </header>
     <main>
-        <div id="product"></div>
-        <div class="slide">
-            <button id="left">⬅️</button>
-            <div class="photos">
-
-            </div>
-            <button id="right">➡️</button>
+        <div id="product">
+        </div>
+        <div id="rating">
+            <input type="number" id="number" placeholder="1-5⭐"  max="5" min="1">
+            <button id="Sumbit">Sumbit</button>
         </div>
     </main>
-
+    
 
     
     <script src="../scripts/details.js"></script>

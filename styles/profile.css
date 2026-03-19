@@ -1,4 +1,5 @@
-#informationprofile{
+/* Container */
+#informationprofile {
     max-width: 700px;
     margin: auto;
     padding: 30px;
@@ -6,8 +7,8 @@
 }
 
 /* profile card */
-.inform{
-    background: #1e1e1e;
+.inform {
+    background: #ebebeb;
     padding: 25px;
     border-radius: 12px;
     display: flex;
@@ -16,34 +17,36 @@
 }
 
 /* user information rows */
-.foreveryone{
+.foreveryone {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #2a2a2a;
+    background: #ffffff;
     padding: 15px 20px;
     border-radius: 10px;
+    flex-wrap: wrap; /* responsive wrap */
 }
 
-.foreveryone h2{
+.foreveryone h2 {
     font-size: 16px;
     color: #aaa;
     text-transform: capitalize;
 }
 
-.foreveryone p{
+.foreveryone p {
     font-size: 15px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 /* buttons container */
-.vinme{
+.vinme {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap; /* wrap on small screens */
 }
 
 /* buttons */
-.bluebutton{
+.bluebutton {
     background: #3b82f6;
     border: none;
     padding: 8px 16px;
@@ -53,27 +56,28 @@
     transition: 0.2s;
 }
 
-.bluebutton:hover{
+.bluebutton:hover {
     background: #2563eb;
 }
 
 /* inputs */
-input{
+input {
     padding: 8px 10px;
     border-radius: 6px;
     border: none;
     outline: none;
+    width: 100%;
 }
 
 /* hidden inputs */
-.hidden{
+.hidden {
     display: none;
 }
 
 /* password section */
-.password{
+.password {
     margin-top: 30px;
-    background: #1e1e1e;
+    background: #ebebeb;
     padding: 20px;
     border-radius: 12px;
     display: flex;
@@ -81,18 +85,18 @@ input{
     gap: 12px;
 }
 
-.password h2{
+.password h2 {
     color: white;
 }
 
 /* password inputs */
-.input{
-    background: #2a2a2a;
-    color: white;
+.input {
+    background: #ffffff;
+    color: rgb(170, 169, 169);
 }
 
 /* avatar section */
-.pfp{
+.pfp {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -101,19 +105,65 @@ input{
 }
 
 /* avatar container */
-#informationprofile > div:last-child{
+#informationprofile > div:last-child {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.avatarsection{
+
+.avatarsection {
     margin-top: 30px;
-    background:#1e1e1e;
-    padding:20px;
-    border-radius:12px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
+    background: #ebebeb;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ------------------- Responsive ------------------- */
+
+/* Mobile: small screens */
+@media (max-width: 600px) {
+    #informationprofile {
+        padding: 15px;
+    }
+
+    .foreveryone {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .vinme {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .pfp {
+        width: 90px;
+        height: 90px;
+    }
+
+    .avatarsection {
+        padding: 15px;
+    }
+}
+
+/* Tablet: medium screens */
+@media (max-width: 900px) and (min-width: 601px) {
+    #informationprofile {
+        padding: 20px;
+    }
+
+    .pfp {
+        width: 100px;
+        height: 100px;
+    }
+
+    .avatarsection {
+        padding: 18px;
+    }
 }

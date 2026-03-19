@@ -15,6 +15,7 @@ fetch("https://api.everrest.educata.dev/auth", {
 .then(resp => resp.json())
 .then(y => {
     localStorage.setItem("information", JSON.stringify(y))
+    user(y)
 })
 .catch (err => console.log(err))
 
@@ -28,6 +29,7 @@ function user(y) {
     <h3>${y.firstName}</h3>`
     let profilebox = document.createElement("div")
     profilebox.classList.add("listofprofile")
+    profilebox.classList.add("hidden")
     profile.appendChild(profilebox)
     let logout = document.createElement("button")
     let infoprofile = document.createElement("button")
