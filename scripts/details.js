@@ -28,8 +28,10 @@ function productinfo (obj) {
             <h4>Brand : ${obj.brand}</h4>
             <h4>Warranty: ${obj.warranty}</h4>
             <p>Description :${obj.description}</p>`
-    cart.addEventListener("click", ()=> {
-    fetch("https://api.everrest.educata.dev/shop/cart/product", {
+cart.addEventListener("click", () => {
+
+  // POST first
+  fetch("https://api.everrest.educata.dev/shop/cart/product", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -41,31 +43,62 @@ function productinfo (obj) {
     }),
   })
   .then(resp => {
+    if (!resp.ok) {
 
-    if (resp.ok) {
+      return fetch("https://api.everrest.educata.dev/shop/cart", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
+      .then(res => res.json())
+      .then(cart => {
+        let products = cart.products || cart.items || [];
+        let item = products.find(p => 
+          p.productId === obj._id || p.productId?._id === obj._id
+        );
+
+        if (!item) {
+          console.log("Item not found in cart", products);
+          Swal.fire({
+            icon: "error",
+            title: "Cannot update cart",
+          });
+          return;
+        }
+        return fetch("https://api.everrest.educata.dev/shop/cart/product", {
+          method: "PATCH",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: obj._id,
+            quantity: item.quantity + 1, 
+          }),
+        });
+      });
+    } else {
       return resp.json();
     }
 
-    return fetch("https://api.everrest.educata.dev/shop/cart/product", {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: obj._id,
-        quantity: 1,
-      }),
-    }).then(r => r.json());
-
   })
-  .then(data => {
-    console.log(data);
+  .then(() => {
+    Swal.fire({
+      icon: "success",
+      title: "Added to cart 🛒",
+      text: "Product quantity updated!",
+      timer: 1500,
+      showConfirmButton: false
+    });
   })
-  .catch(err => {
-    console.log(err);
+  .catch(() => {
+    Swal.fire({
+      icon: "error",
+      title: "Not in stock"
+    });
   });
-    })
+
+});
     
     product.appendChild(productinfo)
     productinfo.appendChild(cart)

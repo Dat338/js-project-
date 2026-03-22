@@ -38,15 +38,14 @@ function product(arr) {
     box.innerHTML = `
        <div class="photo" style="background-image: url(${el.thumbnail});"></div>
         <h2>${el.title}</h2>
-        <div class="flex"><h3>${el.price.current}${el.price.currency}</h3> <h6>Stock: ${el.stock}</h6> <h4>${el.rating}★</h4></div>
+        <div class="flex"><h3>${el.price.current}${el.price.currency}</h3> <h6>Stock:${el.stock <= 0 ? "❌" : `${el.stock}`}</h6> <h4>${el.rating}★</h4></div>
         `;
     box.append(firstbutton, secondbutton);
     main.appendChild(box);
     secondbutton.addEventListener("click", () => {
       window.location.href = `../html/details.html?page=${el._id}`;
     });
-    firstbutton.addEventListener("click", () => {
-
+firstbutton.addEventListener("click", () => {
   fetch("https://api.everrest.educata.dev/shop/cart/product", {
     method: "POST",
     headers: {
@@ -59,29 +58,52 @@ function product(arr) {
     }),
   })
   .then(resp => {
-
     if (!resp.ok) {
-      return fetch("https://api.everrest.educata.dev/shop/cart/product", {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: el._id,
-        quantity: 1,
-      }),
-    })
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
-  }
-    else {
-      return resp.json()
+      return fetch("https://api.everrest.educata.dev/shop/cart", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
+      .then(res => res.json())
+      .then(cart => {
+
+        let item = cart.products.find(p => p.productId === el._id);
+
+        return fetch("https://api.everrest.educata.dev/shop/cart/product", {
+          method: "PATCH",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: el._id,
+            quantity: item.quantity + 1,
+          }),
+        });
+      });
+
+    } else {
+      return resp.json();
     }
 
-});
+  })
+  .then(() => {
+    Swal.fire({
+      icon: "success",
+      title: "Added to cart 🛒",
+      text: "Product quantity updated!",
+      timer: 1500,
+      showConfirmButton: false
     });
+  })
+  .catch(() => {
+    Swal.fire({
+      icon: "error",
+      title: "Not in stock"
+    });
+  });
+
+});
   })}
 
 searchbtn.addEventListener("click", () => {

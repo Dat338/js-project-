@@ -58,7 +58,7 @@ fetch("https://api.everrest.educata.dev/auth/sign_in", {
             showConfirmButton: false
         });
         setTimeout(() => {
-            window.location.href = "./html/products.html";
+            window.location.href = "./html/everestmain.html";
         }, 1500);
     } else {
         Swal.fire({
